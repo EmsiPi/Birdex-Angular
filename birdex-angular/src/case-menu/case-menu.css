@@ -1,0 +1,18 @@
+  :host {
+      --black-green: oklch(43.34% 0.14363 143.316);
+  }
+
+
+
+
+
+
+  div {
+      width: 7.5rem;
+      border-right: 2px solid var(--black-green);
+      border-left: 2px solid var(--black-green);
+      border-bottom: 2px solid var(--black-green);
+      font-size: 1rem;
+      color: var(--gray-900);
+      font-weight: 380;
+  }

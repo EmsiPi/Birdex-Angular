@@ -145,3 +145,7 @@
   .social-links a:hover svg path {
       fill: var(--gray-900);
   }
+
+  app-premier-composant {
+      --colorBackGround: var(--electric-violet)
+  }
