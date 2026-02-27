@@ -1,0 +1,15 @@
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+
+    <label>Nom de l'oiseau :</label>
+    <input type="text" name="name" ngModel required>
+    <label>Lieu :</label>
+    <input type="text" name="location" ngModel required>
+    <label>Date :</label>
+    <input type="text" name="date" ngModel required>
+
+
+    <!-- Désactive le bouton si le formulaire n'est pas valide -->
+    <button type="submit" [disabled]="!loginForm.valid">
+        Noter dans le carnet
+    </button>
+</form>

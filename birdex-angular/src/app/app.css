@@ -75,6 +75,14 @@
       max-width: 9.2rem;
   }
 
+  .body {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 100%;
+      flex-direction: column;
+  }
+
   .content {
       display: flex;
       justify-content: space-around;
@@ -148,4 +156,9 @@
 
   app-premier-composant {
       --colorBackGround: var(--electric-violet)
+  }
+
+
+  .EnBas {
+      background-color: burlywood;
   }
