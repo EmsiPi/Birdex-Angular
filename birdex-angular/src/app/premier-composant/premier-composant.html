@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>PremierComposant</title>
-</head>
-
 <body>
     <p>{{bird.name}}</p>
     <p>{{bird.location}}</p>
     <p>{{bird.date}}</p>
+
+    <button (click)='deleteBird()'>Supprimer</button>
+
+    <app-up-formulaire [birdAEditer]="bird"></app-up-formulaire>
 </body>

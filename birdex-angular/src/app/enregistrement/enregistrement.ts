@@ -5,7 +5,7 @@ import { Formulaire } from '../formulaire/formulaire';
 
 @Component({
   selector: 'app-enregistrement',
-  imports: [RouterOutlet, RouterLink, EnTete, Formulaire],
+  imports: [RouterLink, EnTete, Formulaire],
   templateUrl: './enregistrement.html',
   styleUrl: './enregistrement.css',
 })

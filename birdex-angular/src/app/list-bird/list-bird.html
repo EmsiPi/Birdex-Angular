@@ -1,3 +1,7 @@
 <div class="carnet">
-    <app-premier-composant *ngFor="let bird of listBirds()" [bird]="bird"></app-premier-composant>
+    @for (bird of birdService.birds(); track bird._id) {
+    <app-premier-composant [bird]="bird"></app-premier-composant>
+    } @empty {
+    <p>Aucun oiseau n'a été observé</p>
+    }
 </div>

@@ -1,26 +1,22 @@
-import { Component, signal } from '@angular/core';
-import { Bird } from '../bird/bird';
-import { PremierComposant } from '../premier-composant/premier-composant';
+
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Observable } from 'rxjs';
+import { PremierComposant } from '../premier-composant/premier-composant';
 import { ControleBirds } from '../controle-birds';
 
 @Component({
   selector: 'app-list-bird',
+  standalone: true,
   imports: [PremierComposant, CommonModule],
   templateUrl: './list-bird.html',
   styleUrl: './list-bird.css',
 })
-export class ListBird {
+export class ListBird implements OnInit {
+  // Syntaxe moderne avec inject()
+  protected birdService = inject(ControleBirds);
 
-  listBirds = signal<Bird[]>([]);
-  constructor(private controleBirds: ControleBirds) {
-    this.controleBirds.getBirds().subscribe(birds => {
-      this.listBirds.set(birds);
-    });
-
-    console.log(this.listBirds)
-
+  ngOnInit() {
+    // On demande au service de charger les données
+    this.birdService.getAll();
   }
-
 }
