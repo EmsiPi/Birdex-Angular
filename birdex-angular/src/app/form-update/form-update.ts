@@ -1,7 +1,7 @@
 import { NgForm, FormsModule } from '@angular/forms';
 import { Bird, CreateBird } from '../bird/bird';
 import { ControleBirds } from '../controle-birds';
-import { Component, inject, input, model } from '@angular/core';
+import { Component, EventEmitter, inject, Input, input, model, Output } from '@angular/core';
 
 @Component({
   selector: 'app-up-formulaire',
@@ -10,21 +10,32 @@ import { Component, inject, input, model } from '@angular/core';
   templateUrl: './form-update.html'
 })
 export class FormUpdate {
+
+  constructor() {
+    console.log("passe ici")
+  }
   private birdService = inject(ControleBirds);
   birdAEditer = input<Bird>();
+  @Output() saveSuccess = new EventEmitter<Bird>();
 
   onSubmit(form: NgForm) {
+    const currentBird = this.birdAEditer(); // On récupère la valeur du signal
 
-    if (form.valid) {
-      const bird: CreateBird = {
+    if (form.valid && currentBird) {
+      const birdData: CreateBird = {
         name: form.value.name,
         date: form.value.date,
         location: form.value.location
       };
 
-      this.birdService.updateBird(bird, this.birdAEditer()!!._id);
+      this.birdService.updateBird(birdData, currentBird._id);
 
-      form.reset();
+      // 2. On crée l'objet complet mis à jour pour le renvoyer au parent
+      const updatedBird: Bird = { ...currentBird, ...birdData };
+
+      // 3. On émet l'objet mis à jour (et pas undefined !)
+      this.saveSuccess.emit(updatedBird);
     }
+
   }
 }

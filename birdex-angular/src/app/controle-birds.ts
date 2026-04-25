@@ -62,13 +62,11 @@ export class ControleBirds {
 
       // 2. On met à jour le Signal pour que l'écran change
       this._birds.update(allBirds =>
-        allBirds.map(bird =>
-          bird._id === id ? birdFromServer : bird
-        )
-      );
+        allBirds.map(bird => bird._id === id ? birdFromServer : bird));
 
     } catch (error) {
       console.error('Erreur lors de la mise à jour', error);
     }
   }
+
 }

@@ -1,9 +1,16 @@
 <body>
-    <p>{{bird.name}}</p>
-    <p>{{bird.location}}</p>
-    <p>{{bird.date}}</p>
 
+    @if(!showFormUpdate) {
+    <p>Nom de l'oiseau : {{bird.name}}</p>
+    <p>Lieu de l'observation : {{bird.location}}</p>
+    <p>Date de l'observation : {{bird.date}}</p>
+    <button (click)='variableChangement()'>Modifier</button>
+    <p></p>
     <button (click)='deleteBird()'>Supprimer</button>
+    } @else {
+    <app-up-formulaire [birdAEditer]="bird" (saveSuccess)="updateData($event)">
+    </app-up-formulaire>
+    <button (click)='variableChangement()'>J'ai fini de modifier</button>
+    }
 
-    <app-up-formulaire [birdAEditer]="bird"></app-up-formulaire>
 </body>
