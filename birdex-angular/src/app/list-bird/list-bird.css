@@ -1,0 +1,80 @@
+.slides-container {
+    display: flex;
+    width: 100%;
+    /* Transition fluide dès que le transform change */
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider {
+    width: 100%;
+    flex-shrink: 0;
+
+}
+
+.carnet {
+    overflow: hidden;
+    width: 70%;
+    --colorBackGround: oklch(86.852% 0.08916 70.013);
+
+    /* On déplace les styles ici */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--colorBackGround);
+
+    /* La double bordure nécessite une largeur suffisante pour être visible */
+    border-style: double;
+    border-width: 5px;
+    /* Augmentez à 4px ou 5px pour bien voir l'effet "double" */
+    border-color: rgb(0, 0, 0);
+    border-radius: 5px 20px;
+}
+
+#slideshow {
+    display: flex;
+    justify-content: row;
+    justify-content: center;
+}
+
+/* CSS */
+.button-55 {
+    align-self: center;
+    background-color: #fff;
+    background-image: none;
+    background-position: 0 90%;
+    background-repeat: repeat no-repeat;
+    background-size: 4px 3px;
+    border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+    box-sizing: border-box;
+    color: #41403e;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Neucha, sans-serif;
+    font-size: 1rem;
+    line-height: 23px;
+    outline: none;
+    padding: .75rem;
+    text-decoration: none;
+    transition: all 235ms ease-in-out;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin: 10px;
+}
+
+.button-55:hover {
+    box-shadow: rgb(255, 238, 0) 2px 8px 8px -5px;
+    transform: translate3d(0, 2px, 0);
+}
+
+.button-55:focus {
+    box-shadow: rgb(255, 238, 0) 2px 8px 4px -6px;
+}

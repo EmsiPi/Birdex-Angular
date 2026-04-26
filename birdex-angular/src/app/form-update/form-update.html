@@ -5,7 +5,7 @@
     <label>Lieu :</label>
     <input type="text" name="location" [ngModel]="birdAEditer()?.location" required>
     <label>Date :</label>
-    <input type="text" name="date" [ngModel]="birdAEditer()?.date" required>
+    <input type="date" name="date" [ngModel]="birdAEditer()?.date" required>
 
 
     <button type="submit" [disabled]="!loginForm.valid">

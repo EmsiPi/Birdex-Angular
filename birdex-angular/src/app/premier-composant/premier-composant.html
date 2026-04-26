@@ -1,16 +1,36 @@
 <body>
 
     @if(!showFormUpdate) {
-    <p>Nom de l'oiseau : {{bird.name}}</p>
-    <p>Lieu de l'observation : {{bird.location}}</p>
-    <p>Date de l'observation : {{bird.date}}</p>
-    <button (click)='variableChangement()'>Modifier</button>
-    <p></p>
-    <button (click)='deleteBird()'>Supprimer</button>
+    <div class="InfoBird">
+        <div class="ligneInfo">
+            <p class="titre">- Date de l'observation : &nbsp; </p>
+            <p class="info"> {{ bird.date}}</p>
+        </div>
+        <div class="ligneInfo">
+            <p class="titre">- Nom de l'oiseau : &nbsp;</p>
+            <p class="info"> {{ bird.name}}</p>
+        </div>
+        <div class="ligneInfo">
+            <p class="titre">- Lieu de l'observation : &nbsp;</p>
+            <p class="info"> {{ bird.location}}</p>
+        </div>
+    </div>
+
+    <div class="Bouton">
+        <button type="button" class="btn btn-outline-modif me-2 btn-sm" (click)=" variableChangement()">
+            Modifier
+        </button>
+        <button type="button" class="btn btn-outline-delete btn-sm" (click)="deleteBird()">
+            Supprimer
+        </button>
+    </div>
     } @else {
-    <app-up-formulaire [birdAEditer]="bird" (saveSuccess)="updateData($event)">
-    </app-up-formulaire>
-    <button (click)='variableChangement()'>J'ai fini de modifier</button>
+
+    <div class="ModificationForm">
+        <app-up-formulaire [birdAEditer]="bird" (saveSuccess)="updateData($event)">
+        </app-up-formulaire>
+        <button (click)='variableChangement()'>J'ai fini de modifier</button>
+    </div>
     }
 
 </body>

@@ -11,9 +11,6 @@ import { Component, EventEmitter, inject, Input, input, model, Output } from '@a
 })
 export class FormUpdate {
 
-  constructor() {
-    console.log("passe ici")
-  }
   private birdService = inject(ControleBirds);
   birdAEditer = input<Bird>();
   @Output() saveSuccess = new EventEmitter<Bird>();

@@ -1,0 +1,13 @@
+// src/styles/_variables.scss
+$btn-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2); // Exemple de valeur
+// Définis ta couleur personnalisée
+$vert-color: #2e8b57; // Exemple : vert foncé
+$delete-color: #f03f20;
+
+// Ajoute ta couleur au thème Bootstrap
+$theme-colors: (
+    "modif": $vert-color,
+    "delete": $delete-color
+);
+// Import de Bootstrap (après tes variables)
+@import "../../node_modules/bootstrap/scss/bootstrap";

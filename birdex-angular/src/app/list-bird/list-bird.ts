@@ -19,4 +19,18 @@ export class ListBird implements OnInit {
     // On demande au service de charger les données
     this.birdService.getAll();
   }
+
+  currentIndex = 0;
+
+  nextSlide() {
+    const totalBirds = this.birdService.birds().length;
+    // On incrémente et on revient à 0 si on dépasse le nombre d'oiseaux
+    this.currentIndex = (this.currentIndex + 1) % totalBirds;
+  }
+
+  lastSlide() {
+    const totalBirds = this.birdService.birds().length;
+    // On incrémente et on revient à 0 si on dépasse le nombre d'oiseaux
+    this.currentIndex = (this.currentIndex - 1) % totalBirds;
+  }
 }

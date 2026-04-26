@@ -114,9 +114,6 @@
 
   nav a {
       width: 7.5rem;
-      border-right: 2px solid var(--black-green);
-      border-left: 2px solid var(--black-green);
-      border-bottom: 2px solid var(--black-green);
       font-size: 1rem;
       color: var(--gray-900);
       font-weight: 380;
@@ -124,9 +121,6 @@
 
   .observations {
       width: 7.5rem;
-      border-right: 2px solid var(--black-green);
-      border-left: 2px solid var(--black-green);
-      border-bottom: 2px solid var(--black-green);
       font-size: 1rem;
       color: var(--gray-900);
       font-weight: 380;
