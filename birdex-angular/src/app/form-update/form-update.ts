@@ -15,24 +15,41 @@ export class FormUpdate {
   birdAEditer = input<Bird>();
   @Output() saveSuccess = new EventEmitter<Bird>();
 
+  private selectedFile: File | null = null;
+
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+    if (file) {
+      this.selectedFile = file;
+      console.log("Fichier sélectionné :", file.name);
+    }
+  }
+
   onSubmit(form: NgForm) {
     const currentBird = this.birdAEditer(); // On récupère la valeur du signal
 
     if (form.valid && currentBird) {
-      const birdData: CreateBird = {
-        name: form.value.name,
-        date: form.value.date,
-        location: form.value.location
-      };
+      // On utilise FormData pour emballer le texte ET le fichier
+      const formData = new FormData();
+      formData.append('name', form.value.name);
+      formData.append('location', form.value.location);
+      formData.append('date', form.value.date);
+      // Le fichier à la fin
+      if (this.selectedFile) {
+        formData.append('image', this.selectedFile, this.selectedFile.name);
+      }
 
-      this.birdService.updateBird(birdData, currentBird._id);
+      this.birdService.updateBird(formData, currentBird._id);
 
       // 2. On crée l'objet complet mis à jour pour le renvoyer au parent
-      const updatedBird: Bird = { ...currentBird, ...birdData };
+      const updatedBird: Bird = { ...currentBird, ...formData };
 
       // 3. On émet l'objet mis à jour (et pas undefined !)
       this.saveSuccess.emit(updatedBird);
     }
 
   }
+
+
+
 }

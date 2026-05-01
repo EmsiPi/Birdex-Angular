@@ -1,36 +1,54 @@
-<body>
+<div class="composant">
 
-    @if(!showFormUpdate) {
+    <div class="IllustrationBird">
+
+        @if(bird.urlImage != null) {
+        <img [src]="bird.urlImage" alt="Photo de {{ bird.name }}" style="width: 200px;">
+        } @else {
+        <img [src]="'images/plume.png'" alt="Photo absente" style="width: 200px;">
+        }
+
+
+    </div>
+
+
     <div class="InfoBird">
-        <div class="ligneInfo">
-            <p class="titre">- Date de l'observation : &nbsp; </p>
-            <p class="info"> {{ bird.date}}</p>
+        @if(!showFormUpdate) {
+        <div class="textInfo">
+            <div class="ligneInfo">
+                <p class="titre">- Date de l'observation : &nbsp; </p>
+                <p class="info"> {{ bird.date}}</p>
+            </div>
+            <div class="ligneInfo">
+                <p class="titre">- Nom de l'oiseau : &nbsp;</p>
+                <p class="info"> {{ bird.name}}</p>
+            </div>
+            <div class="ligneInfo">
+                <p class="titre">- Lieu de l'observation : &nbsp;</p>
+                <p class="info"> {{ bird.location}}</p>
+            </div>
+
+
+
         </div>
-        <div class="ligneInfo">
-            <p class="titre">- Nom de l'oiseau : &nbsp;</p>
-            <p class="info"> {{ bird.name}}</p>
+
+        <div class="Bouton">
+            <button type="button" class="btn btn-outline-modif me-2 btn-sm" (click)=" variableChangement()">
+                Modifier
+            </button>
+            <button type="button" class="btn btn-outline-delete btn-sm" (click)="deleteBird()">
+                Supprimer
+            </button>
         </div>
-        <div class="ligneInfo">
-            <p class="titre">- Lieu de l'observation : &nbsp;</p>
-            <p class="info"> {{ bird.location}}</p>
+        } @else {
+
+        <div class="ModificationForm">
+            <app-up-formulaire [birdAEditer]="bird" (saveSuccess)="updateData($event)">
+            </app-up-formulaire>
+            <button (click)='variableChangement()'>J'ai fini de modifier</button>
         </div>
+        }
+
     </div>
 
-    <div class="Bouton">
-        <button type="button" class="btn btn-outline-modif me-2 btn-sm" (click)=" variableChangement()">
-            Modifier
-        </button>
-        <button type="button" class="btn btn-outline-delete btn-sm" (click)="deleteBird()">
-            Supprimer
-        </button>
-    </div>
-    } @else {
-
-    <div class="ModificationForm">
-        <app-up-formulaire [birdAEditer]="bird" (saveSuccess)="updateData($event)">
-        </app-up-formulaire>
-        <button (click)='variableChangement()'>J'ai fini de modifier</button>
-    </div>
-    }
-
-</body>
+</div>

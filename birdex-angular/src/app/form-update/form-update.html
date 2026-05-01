@@ -1,13 +1,21 @@
 <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
 
     <label>Nom de l'oiseau :</label>
+    <br>
     <input type="text" name="name" [ngModel]="birdAEditer()?.name" required>
+    <br>
     <label>Lieu :</label>
+    <br>
     <input type="text" name="location" [ngModel]="birdAEditer()?.location" required>
+    <br>
     <label>Date :</label>
+    <br>
     <input type="date" name="date" [ngModel]="birdAEditer()?.date" required>
-
-
+    <br>
+    <label>Image de {{birdAEditer()?.name}} : </label>
+    <br>
+    <input type="file" (change)="onFileSelected($event)" name="urlImage" accept="image/*">
+    <br>
     <button type="submit" [disabled]="!loginForm.valid">
         Sauvegarder
     </button>

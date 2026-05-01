@@ -14,8 +14,8 @@
 .carnet {
     overflow: hidden;
     width: 70%;
-    --colorBackGround: oklch(86.852% 0.08916 70.013);
-
+    --colorBackGround: oklch(88.679% 0.07573 71.091);
+    --colorLign: rgb(247, 104, 47);
     /* On déplace les styles ici */
     display: flex;
     flex-direction: row;
@@ -23,12 +23,20 @@
     padding: 20px;
     background-color: var(--colorBackGround);
 
-    /* La double bordure nécessite une largeur suffisante pour être visible */
-    border-style: double;
-    border-width: 5px;
+    /* La double bordure nécessite une largeur suffisante pour être visible 
+    border-style: double;*/
     /* Augmentez à 4px ou 5px pour bien voir l'effet "double" */
-    border-color: rgb(0, 0, 0);
-    border-radius: 5px 20px;
+
+    border-radius: 12px 0px 12px 0px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+
+    background-image: repeating-linear-gradient(180deg, transparent, transparent 22px, var(--colorLign) 1px, var(--colorLign) 23px);
+
+}
+
+body {
+    background-color: #ddd;
+    margin: 3rem;
 }
 
 #slideshow {
@@ -45,7 +53,6 @@
     background-position: 0 90%;
     background-repeat: repeat no-repeat;
     background-size: 4px 3px;
-    border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
     border-style: solid;
     border-width: 2px;
     box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;

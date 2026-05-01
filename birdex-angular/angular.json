@@ -21,9 +21,8 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
-              },
-              "src/images"
+                "input": "src/assets"
+              }
             ],
             "styles": [
               "src/styles/_variables.scss",

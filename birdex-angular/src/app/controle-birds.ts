@@ -44,9 +44,9 @@ export class ControleBirds {
     }
   }
 
-  async addBird(bird: CreateBird) {
+  async addBird(birdData: FormData) {
     try {
-      const newBird = await lastValueFrom(this.http.post<Bird>(this.url, bird));
+      const newBird = await lastValueFrom(this.http.post<Bird>(this.url, birdData));
       // Mise à jour immédiate de la liste pour que ListBird se rafraîchisse
       this._birds.update(current => [...current, newBird]);
     } catch (error) {
@@ -54,7 +54,7 @@ export class ControleBirds {
     }
   }
 
-  async updateBird(updatedData: CreateBird, id: String) {
+  async updateBird(updatedData: FormData, id: String) {
     try {
       const birdFromServer = await lastValueFrom(
         this.http.patch<Bird>(`${this.url}/${id}`, updatedData)

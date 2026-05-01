@@ -1,4 +1,43 @@
-.form {
+/* Conteneur principal du formulaire */
+form {
     display: flex;
     flex-direction: column;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 70px;
+    border-radius: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.background {
+    width: 100%;
+    min-height: 70vh;
+    background-image: url("/images/carnet.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+}
+
+/* Style des labels pour les rendre plus pro */
+label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+    font-size: 0.9rem;
+}
+
+/* Style commun pour tous les champs texte, date et file */
+input {
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    /* Animation douce au focus */
+    outline: none;
 }
