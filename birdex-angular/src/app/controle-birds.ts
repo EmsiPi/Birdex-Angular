@@ -60,7 +60,7 @@ export class ControleBirds {
         this.http.patch<Bird>(`${this.url}/${id}`, updatedData)
       );
 
-      // 2. On met à jour le Signal pour que l'écran change
+      // On met à jour le Signal pour que l'écran change
       this._birds.update(allBirds =>
         allBirds.map(bird => bird._id === id ? birdFromServer : bird));
 

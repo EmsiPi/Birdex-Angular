@@ -25,31 +25,28 @@ export class FormUpdate {
     }
   }
 
-  onSubmit(form: NgForm) {
-    const currentBird = this.birdAEditer(); // On récupère la valeur du signal
+  async onSubmit(form: NgForm) {
+    const currentBird = this.birdAEditer();
 
     if (form.valid && currentBird) {
-      // On utilise FormData pour emballer le texte ET le fichier
       const formData = new FormData();
       formData.append('name', form.value.name);
       formData.append('location', form.value.location);
       formData.append('date', form.value.date);
-      // Le fichier à la fin
+
       if (this.selectedFile) {
         formData.append('image', this.selectedFile, this.selectedFile.name);
       }
 
-      this.birdService.updateBird(formData, currentBird._id);
+      // Attendre que le service finisse la mise à jour
+      await this.birdService.updateBird(formData, currentBird._id);
 
-      // 2. On crée l'objet complet mis à jour pour le renvoyer au parent
-      const updatedBird: Bird = { ...currentBird, ...formData };
-
-      // 3. On émet l'objet mis à jour (et pas undefined !)
-      this.saveSuccess.emit(updatedBird);
+      // Une fois fini, on émet le succès. 
+      // Idéalement, récupère l'oiseau mis à jour depuis le signal du service
+      const birdUpdated = this.birdService.birds().find(b => b._id === currentBird._id);
+      this.saveSuccess.emit(birdUpdated);
     }
-
   }
-
 
 
 }
