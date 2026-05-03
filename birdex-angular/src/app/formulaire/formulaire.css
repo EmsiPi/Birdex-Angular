@@ -42,3 +42,32 @@ input {
     /* Animation douce au focus */
     outline: none;
 }
+
+input::file-selector-button {
+    font-weight: bold;
+    color: rgb(75, 72, 72);
+    padding: 0.2em;
+    border: thin solid grey;
+    border-radius: 3px;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+    border: 2px solid #3498db;
+    color: #3498db;
+    font-weight: bold;
+
+    background-image: linear-gradient(to right, #ffb67a 50%, transparent 50%);
+
+    /* On double la largeur pour cacher la couleur à droite au départ */
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+
+/* L'effet de remplissage au survol */
+button:not(:disabled):hover {
+    color: white;
+    /* On déplace le fond vers la gauche pour faire apparaître la couleur */
+    background-position: left bottom;
+    transition: all 0.4s ease;
+}
