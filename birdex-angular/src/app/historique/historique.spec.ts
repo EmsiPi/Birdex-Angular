@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Enregistrement } from './enregistrement';
+import { Historique } from './historique';
 
-describe('Enregistrement', () => {
-  let component: Enregistrement;
-  let fixture: ComponentFixture<Enregistrement>;
+describe('Historique', () => {
+  let component: Historique;
+  let fixture: ComponentFixture<Historique>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Enregistrement]
+      imports: [Historique]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Enregistrement);
+    fixture = TestBed.createComponent(Historique);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
@@ -20,5 +20,4 @@ describe('Enregistrement', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
 });

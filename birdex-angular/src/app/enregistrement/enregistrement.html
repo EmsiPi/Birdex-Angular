@@ -17,6 +17,17 @@
             </nav>
         </div>
         <div class="EnBas">
+
+            <div class="historique">
+                @for (bird of birdService.birds().slice(-4); track bird._id; let i = $index) {
+                <div class="slider">
+                    <app-historique [bird]="bird"></app-historique>
+                </div>
+                } @empty {
+                <p>Aucun historique</p>
+                }
+            </div>
+
             <app-formulaire></app-formulaire>
         </div>
     </main>

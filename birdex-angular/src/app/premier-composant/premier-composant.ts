@@ -13,9 +13,6 @@ import { FormUpdate } from '../form-update/form-update';
 })
 export class PremierComposant {
 
-  constructor() {
-    console.log("passe ici")
-  }
   @Input({ required: true }) bird!: Bird;
 
   private birdService = inject(ControleBirds);
