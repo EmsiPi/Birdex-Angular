@@ -1,4 +1,4 @@
-import { Component, computed, inject, Injectable, signal } from '@angular/core';
+import { Component, computed, inject, Injectable, Signal, signal } from '@angular/core';
 import { Bird, CreateBird } from './bird/bird';
 import { lastValueFrom, Observable, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -12,18 +12,18 @@ export class ControleBirds {
   private readonly url = "http://localhost:3000/birds";
 
   private _birds = signal<Bird[]>([]);
+  private _birdex = signal<string[]>([])
   private _loading = signal<boolean>(false);
 
   //computed pour permettre de lire le signal dans d'autres composants 
   //mais obligation de passer par les méthodes de la classe pour modifier sa valeur
   readonly birds = computed(() => this._birds());
+  readonly birdex = computed(() => this._birdex());
   readonly loading = computed(() => this._loading());
 
-  // Charger les oiseaux
-  async getAll() {
+  async initAll() {
     this._loading.set(true);
     try {
-      // On convertit l'observable en promesse pour un code plus lisible (async/await)
       const data = await lastValueFrom(this.http.get<Bird[]>(this.url));
       this._birds.set(data);
     } catch (error) {
@@ -33,7 +33,19 @@ export class ControleBirds {
     }
   }
 
-  // Supprimer un oiseau
+  async initBirdex() {
+    this._loading.set(true);
+
+    try {
+      const data = await lastValueFrom(this.http.get<string[]>(`${this.url}/birdex`));
+      this._birdex.set(data)
+    } catch (error) {
+      console.error('Erreur chargement birdex', error);
+    } finally {
+      this._loading.set(false);
+    }
+  }
+
   async deleteBird(id: String) {
     try {
       await lastValueFrom(this.http.delete(`${this.url}/${id}`));
@@ -48,7 +60,7 @@ export class ControleBirds {
     try {
       const newBird = await lastValueFrom(this.http.post<Bird>(this.url, birdData));
       // Mise à jour immédiate de la liste pour que ListBird se rafraîchisse
-      this._birds.update(current => [...current, newBird]);
+      this._birds.update(birds => [...birds, newBird]);
     } catch (error) {
       console.error('Erreur lors de l\'ajout', error);
     }
@@ -61,8 +73,8 @@ export class ControleBirds {
       );
 
       // On met à jour le Signal pour que l'écran change
-      this._birds.update(allBirds =>
-        allBirds.map(bird => bird._id === id ? birdFromServer : bird));
+      this._birds.update(birds =>
+        birds.map(bird => bird._id === id ? birdFromServer : bird));
 
     } catch (error) {
       console.error('Erreur lors de la mise à jour', error);

@@ -16,21 +16,18 @@ export class ListBird implements OnInit {
   protected birdService = inject(ControleBirds);
 
   ngOnInit() {
-    // On demande au service de charger les données
-    this.birdService.getAll();
+    this.birdService.initAll();
   }
 
   currentIndex = 0;
 
   nextSlide() {
     const totalBirds = this.birdService.birds().length;
-    // On incrémente et on revient à 0 si on dépasse le nombre d'oiseaux
     this.currentIndex = (this.currentIndex + 1) % totalBirds;
   }
 
   lastSlide() {
     const totalBirds = this.birdService.birds().length;
-    // On incrémente et on revient à 0 si on dépasse le nombre d'oiseaux
     this.currentIndex = (this.currentIndex - 1) % totalBirds;
   }
 }

@@ -20,9 +20,21 @@
     flex-direction: row;
 }
 
+.content {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+}
+
 h1 {
     font-size: 3.125rem;
-    color: rgb(255, 200, 149);
+    color: rgb(255, 181, 120);
     font-weight: 700;
     line-height: 100%;
     letter-spacing: -0.125rem;

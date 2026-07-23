@@ -14,8 +14,7 @@ export class Enregistrement {
   protected birdService = inject(ControleBirds);
 
   ngOnInit() {
-    // On demande au service de charger les données
-    this.birdService.getAll();
+    this.birdService.initAll();
   }
 
 }

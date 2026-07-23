@@ -1,0 +1,26 @@
+<body>
+    <main class="main">
+        <div class="content">
+            <app-en-tete></app-en-tete>
+        </div>
+        <div class="divider"></div>
+        <div class="menu">
+            <nav>
+                <div class="animBouton">
+                    <a routerLink="/leCarnet" routerLinkActive="active" ariaCurrentWhenActive="page">Voir mon Carnet</a>
+                </div>
+            </nav>
+        </div>
+        <div class="EnBas">
+            <div class="espece-birdex">
+                @for (espece of birdService.birdex().slice(-4); track $index; let i = $index) {
+                <div class="dex">
+                    <app-espece-birdex [espece]="espece"></app-espece-birdex>
+                </div>
+                } @empty {
+                <p>Aucune espèce observée, il est temps d'aller en trouver !</p>
+                }
+            </div>
+        </div>
+    </main>
+</body>
