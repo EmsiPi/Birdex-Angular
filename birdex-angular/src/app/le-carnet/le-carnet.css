@@ -20,18 +20,6 @@ body {
     align-items: center;
 }
 
-.content {
-    display: flex;
-    background-color: rgba(0, 0, 0, 0.4);
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    flex-direction: column;
-    background-size: cover;
-    background-position: center;
-}
-
 .animBouton {
     height: 60px;
     background-color: rgb(241, 239, 239);
