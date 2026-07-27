@@ -4,10 +4,8 @@ main {
     align-items: center;
     width: 100%;
     min-height: 110vh;
-    background-color: rgb(255, 255, 255);
-    /* On utilise background-image pour un meilleur contrôle */
-    background-image: url("/images/petitozoi.jpg");
-    /* L'image remplit tout l'espace sans se déformer */
+    background: linear-gradient(135deg, #1dabec 0%, #ffffff 100%);
+    text-align: center;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -36,6 +34,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.content {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
 }
 
 .animBouton:hover {
