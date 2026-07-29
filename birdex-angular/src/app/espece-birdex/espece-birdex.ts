@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { Bird } from '../bird/bird';
+import { Component, Input, inject, computed } from '@angular/core';
+import { Bird, BirdEspeces } from '../bird/bird';
+import { ControleBirds } from '../controle-birds';
 
 @Component({
   selector: 'app-espece-birdex',
@@ -8,5 +9,10 @@ import { Bird } from '../bird/bird';
   styleUrl: './espece-birdex.css',
 })
 export class EspeceBirdex {
-  @Input({ required: true }) espece!: string;
+  protected birdService = inject(ControleBirds);
+  @Input({ required: true }) espece!: BirdEspeces;
+
+  protected urlImages = computed(() => {
+    return this.birdService.image(this.espece.name);
+  });
 }

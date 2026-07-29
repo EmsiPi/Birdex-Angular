@@ -16,3 +16,9 @@ export interface CreateBird {
     location: string;
     urlImage: String | undefined;
 }
+
+
+export interface BirdEspeces {
+    name: string;
+    count: number;
+}

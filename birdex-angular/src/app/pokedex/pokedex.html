@@ -12,7 +12,7 @@
         </div>
         <div class="EnBas">
             <div class="espece-birdex">
-                @for (espece of birdService.birdex().slice(-4); track $index; let i = $index) {
+                @for (espece of birdService.birdex().slice(-4); track espece.name) {
                 <div class="dex">
                     <app-espece-birdex [espece]="espece"></app-espece-birdex>
                 </div>

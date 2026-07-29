@@ -16,6 +16,7 @@ export class Pokedex {
   protected birdService = inject(ControleBirds);
 
   ngOnInit() {
+    this.birdService.initAll();
     this.birdService.initBirdex();
   }
 }

@@ -1,18 +1,21 @@
 import { Component, computed, inject, Injectable, Signal, signal } from '@angular/core';
-import { Bird, CreateBird } from './bird/bird';
+import { Bird, CreateBird, BirdEspeces } from './bird/bird';
 import { lastValueFrom, Observable, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
+import { EspeceBirdex } from './espece-birdex/espece-birdex';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ControleBirds {
+
   private http = inject(HttpClient);
   private readonly url = "http://localhost:3000/birds";
 
   private _birds = signal<Bird[]>([]);
-  private _birdex = signal<string[]>([])
+  private _birdex = signal<BirdEspeces[]>([]);
   private _loading = signal<boolean>(false);
 
   //computed pour permettre de lire le signal dans d'autres composants 
@@ -35,15 +38,22 @@ export class ControleBirds {
 
   async initBirdex() {
     this._loading.set(true);
-
     try {
-      const data = await lastValueFrom(this.http.get<string[]>(`${this.url}/birdex`));
-      this._birdex.set(data)
+      const data = await lastValueFrom(
+        this.http.get<BirdEspeces[]>(`${this.url}/birdex`)
+      );
+      this._birdex.set(data.sort((a, b) => a.name.localeCompare(b.name)));
     } catch (error) {
       console.error('Erreur chargement birdex', error);
     } finally {
       this._loading.set(false);
     }
+  }
+
+  image(espece: String): String[] {
+    return this._birds()
+      .filter(bird => bird.name === espece && !!bird.urlImage)
+      .map(bird => bird.urlImage!);
   }
 
   async deleteBird(id: String) {
