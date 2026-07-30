@@ -4,7 +4,18 @@ Birdex est une application web conçu actuellement pour être hébergé localeme
 
 Birdex permet à l'utilisateur de créer son carnet d'observation, en ajoutant des observations, des photos. Il peut les modifier et les supprimer. 
 
-<img width="1239" height="900" alt="image" src="https://github.com/user-attachments/assets/f83f6f9a-8249-4e87-bc48-7a46c332c1f9" />
+Le formulaire permettant d'enregistrer une observation avec une image.
 
-<img width="1167" height="907" alt="image" src="https://github.com/user-attachments/assets/d67638d6-214b-4594-b584-c8224fbc8cf6" />
+<img width="923" height="843" alt="image" src="https://github.com/user-attachments/assets/c4f8c96d-7ee1-4886-89f2-7f9825c78742" />
+
+
+Le carnet ayant l'ensemble des observations enregistrées avec leurs informations.
+
+<img width="969" height="860" alt="image" src="https://github.com/user-attachments/assets/46343707-b327-4e65-a741-306423220935" />
+
+
+L'affichage de la collection des espèces déjà observées est en cours de développement. 
+
+<img width="1004" height="744" alt="image" src="https://github.com/user-attachments/assets/ec1b00d5-1b16-4fc2-91ce-0f65d0e8c49e" />
+
 
