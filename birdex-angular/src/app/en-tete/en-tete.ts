@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -8,5 +8,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './en-tete.css',
 })
 export class EnTete {
+  @Input() backgroundColorCarnet = 'rgb(241, 239, 239)';
+  @Input() backgroundColorPok = 'rgb(241, 239, 239)';
 
 }
