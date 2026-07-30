@@ -1,14 +1,16 @@
 <div class="textInfo">
+    <div class="images">
+        @for (url of urlImages(); track $index;) {
+        @if(url) {
+        <img [src]="url" style="width: 30%;">
+        }
+        } @empty {
+        Vous n'avez pas d'image de cet oiseau.
+        }
+    </div>
+
     <div class="ligneInfo">
         <p class="infoNom"> {{espece.name}} vu {{espece.count}} fois. &nbsp;</p>
     </div>
-
-    @for (url of urlImages(); track $index;) {
-    @if(url) {
-    <img [src]="url" style="width: 30%;">
-    }
-    } @empty {
-    Vous n'avez pas d'image de cet oiseau.
-    }
 
 </div>
