@@ -1,17 +1,3 @@
-/* --- CONTENEUR PRINCIPAL DE LA CARTE --- */
-.card-espece {
-    display: grid;
-    grid-template-columns: 60% 40%;
-    /* 60% images, 40% texte */
-    gap: 15px;
-    background-color: bisque;
-    border: 2px solid #41403e;
-    border-radius: 8px;
-    padding: 12px;
-    margin-bottom: 12px;
-    align-items: center;
-}
-
 .carte-espece {
     display: grid;
     grid-template-columns: 60% 40%;
@@ -26,13 +12,6 @@
 
 }
 
-.section-image {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    height: 220px;
-    width: 100%;
-}
 
 .section-images {
     display: flex;
