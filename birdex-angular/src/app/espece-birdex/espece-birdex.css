@@ -1,31 +1,133 @@
-.textInfo {
-    border-style: solid;
-    border-width: 2 px;
-    margin-bottom: 4px;
+/* --- CONTENEUR PRINCIPAL DE LA CARTE --- */
+.card-espece {
     display: grid;
     grid-template-columns: 60% 40%;
-    grid-gap: 10px;
-    grid-template-rows: 100%;
-    max-width: 100%;
-    min-height: 170px;
+    /* 60% images, 40% texte */
+    gap: 15px;
     background-color: bisque;
+    border: 2px solid #41403e;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    align-items: center;
 }
 
-.ligneInfo {
-    grid-column: 2;
-    grid-row: 1;
-    display: flex;
-    justify-content: start;
+.carte-espece {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    /* 60% images, 40% texte */
+    gap: 15px;
+    background-color: bisque;
+    border: 2px solid #41403e;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    align-items: center;
+
 }
 
-.images {
-    grid-column: 1;
-    grid-row: 1;
-    max-width: 100%;
+.section-image {
     display: flex;
+    align-items: center;
     gap: 8px;
+    height: 220px;
+    width: 100%;
 }
 
-.images img {
-    object-fit: cover;
+.section-images {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 220px;
+    width: 100%;
+}
+
+.section-slider {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.track-slider {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.slide-sans-image {
+
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.section-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.info-nom {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #41403e;
+}
+
+.info-comptage {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* --- BOUTONS --- */
+.button-55 {
+    flex-shrink: 0;
+    /* Empêche les boutons de se réduire */
+    align-self: center;
+    background-color: #fff;
+    border: 2px solid #41403e;
+    box-shadow: rgba(0, 0, 0, .2) 8px 15px 15px -10px;
+    color: #41403e;
+    cursor: pointer;
+    font-family: Neucha, sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.4rem 0.6rem;
+    outline: none;
+    transition: all 200ms ease-in-out;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    user-select: none;
+}
+
+.button-55:hover {
+    box-shadow: rgb(255, 238, 0) 2px 5px 5px -2px;
+    transform: translate3d(0, -1px, 0);
 }

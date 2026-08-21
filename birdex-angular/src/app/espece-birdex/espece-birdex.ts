@@ -15,4 +15,15 @@ export class EspeceBirdex {
   protected urlImages = computed(() => {
     return this.birdService.image(this.espece.name);
   });
+
+  currentIndex = 0;
+
+  nextSlide(count: number) {
+    this.currentIndex = (this.currentIndex + 1) % count;
+  }
+
+  lastSlide(count: number) {
+    const totalBirds = this.birdService.birds().length;
+    this.currentIndex = (this.currentIndex - 1) % count;
+  }
 }

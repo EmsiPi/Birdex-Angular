@@ -1,16 +1,28 @@
-<div class="textInfo">
-    <div class="images">
-        @for (url of urlImages(); track $index;) {
-        @if(url) {
-        <img [src]="url" style="width: 30%;">
-        }
-        } @empty {
-        Vous n'avez pas d'image de cet oiseau.
-        }
+<div class="carte-espece">
+    <div class="section-images">
+        <button class="button-55" role="button" (click)="lastSlide(espece.count)">
+            &lt;</button>
+
+        <div class="section-slider">
+            <div class="track-slider" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+                @for (url of urlImages(); track $index) {
+                <div class="slide">
+                    <img [src]="url" [alt]="espece.name">
+                </div>
+                } @empty {
+                <div class="slide-sans-image">
+                    <p>Vous n'avez pas d'image de cet espece.</p>
+                </div>
+                }
+            </div>
+        </div>
+
+        <button class="button-55" role="button" (click)="nextSlide(espece.count)">&gt;</button>
     </div>
 
-    <div class="ligneInfo">
-        <p class="infoNom"> {{espece.name}} vu {{espece.count}} fois. &nbsp;</p>
+    <div class="section-info">
+        <h2 class="info-nom">{{ espece.name }}</h2>
+        <p class="info-comptage">Observé <strong>{{ espece.count }}</strong> fois</p>
     </div>
 
 </div>
