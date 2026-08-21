@@ -1,6 +1,6 @@
 .carte-espece {
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 45% 55%;
     /* 60% images, 40% texte */
     gap: 15px;
     background-color: bisque;
