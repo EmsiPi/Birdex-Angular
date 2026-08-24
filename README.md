@@ -16,7 +16,6 @@ Le carnet ayant l'ensemble des observations enregistrées avec leurs information
 
 L'affichage de la collection des espèces déjà observées est en cours de développement. 
 
-<img width="1004" height="744" alt="image" src="<img width="1249" height="765" alt="image" src="https://github.com/user-attachments/assets/971ec48e-3171-4db4-b978-08a9b1aa9d39" />
-" />
+<img width="1249" height="765" alt="image" src="https://github.com/user-attachments/assets/971ec48e-3171-4db4-b978-08a9b1aa9d39" />
 
 
