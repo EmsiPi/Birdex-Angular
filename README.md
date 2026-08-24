@@ -10,8 +10,7 @@ Le formulaire permettant d'enregistrer une observation avec une image.
 
 Le carnet ayant l'ensemble des observations enregistrées avec leurs informations.
 
-<img width="969" height="860" alt="image" src="https://github.com/user-attachments/assets/46343707-b327-4e65-a741-306423220935" />
-
+<img width="894" height="911" alt="image" src="https://github.com/user-attachments/assets/235a92b7-26fd-4429-9763-381f7e04bb51" />
 
 L'affichage de la collection des espèces déjà observées est en cours de développement. 
 
