@@ -6,8 +6,7 @@ Birdex permet à l'utilisateur de créer son carnet d'observation, en ajoutant d
 
 Le formulaire permettant d'enregistrer une observation avec une image.
 
-<img width="923" height="843" alt="image" src="https://github.com/user-attachments/assets/c4f8c96d-7ee1-4886-89f2-7f9825c78742" />
-
+<img width="1074" height="865" alt="image" src="https://github.com/user-attachments/assets/9b091ff5-4d09-4ff4-80ea-93b6209a0490" />
 
 Le carnet ayant l'ensemble des observations enregistrées avec leurs informations.
 
