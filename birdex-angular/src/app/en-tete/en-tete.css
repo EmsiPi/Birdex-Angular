@@ -3,7 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&display=swap');
 
 .en-tete {
-    display: flex;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -47,23 +48,19 @@ p {
     font-weight: 600;
     font-family: 'Quicksand', sans-serif;
     text-align: center;
-    margin-top: 17px;
-    margin-left: 15px;
+    /* margin-top: 17px;
+    margin-left: 15px; */
 }
 
-.left-side {
-    position: relative;
+.titre {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    flex-direction: column;
 }
 
 .iconeMenu {
-    position: absolute;
-    left: 450px;
     display: flex;
     gap: 20px;
+    justify-content: flex-end;
 }
 
 .nav-icon {
