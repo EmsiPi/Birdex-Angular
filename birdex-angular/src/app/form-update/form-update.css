@@ -1,0 +1,17 @@
+label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #f31414;
+    font-size: 0.9rem;
+}
+
+input {
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    border: 2px solid #c94545;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    /* Animation douce au focus */
+    outline: none;
+}
